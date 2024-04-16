@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const { Circle, Square, Triangle } = require("./shapes/shapes");
 const fs = require("fs");
 
+// Function to prompt the user for logo details
 async function promptUser() {
   return inquirer.prompt([
     {
@@ -28,6 +29,7 @@ async function promptUser() {
   ]);
 }
 
+// Function to create the logo based on user input
 async function createLogo() {
   const logo = await promptUser();
 
@@ -65,6 +67,7 @@ async function createLogo() {
   }
 }
 
+// Main function to create and display the logo
 async function main() {
   const logo = await createLogo();
   if (logo) {
@@ -72,4 +75,5 @@ async function main() {
   }
 }
 
+// Call the main function to start the program
 main();
